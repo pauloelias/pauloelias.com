@@ -53,7 +53,7 @@ const SmallIcon = tw.img`
 
 export default () => (
   <Wrapper>
-    <SEO title="Home" />
+    <SEO title="Hi, I'm Paulo Elias!" />
     <Main>
       <Logos>
         {logos &&
