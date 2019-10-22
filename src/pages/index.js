@@ -8,7 +8,7 @@ const Heading = tw.h1`
 
 export default () => (
   <>
-    <SEO />
+    <SEO title="Hi, I'm Paulo Elias!" />
     <Heading>Hello, world!</Heading>
   </>
 )
