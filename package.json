@@ -17,11 +17,14 @@
     "@mdx-js/mdx": "^1.5.1",
     "@mdx-js/react": "^1.5.1",
     "gatsby": "^2.17.0",
+    "gatsby-image": "^2.2.29",
     "gatsby-plugin-emotion": "^4.1.12",
     "gatsby-plugin-mdx": "^1.0.53",
     "gatsby-plugin-postcss": "^2.1.13",
     "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-sharp": "^2.2.32",
     "gatsby-source-filesystem": "^2.1.33",
+    "gatsby-transformer-sharp": "^2.3.0",
     "postcss-import": "^12.0.1",
     "prop-types": "^15.7.2",
     "react": "^16.10.2",
@@ -42,9 +45,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pauloelias/gatsby-tailwind-emotion-starter"
+    "url": "https://github.com/pauloelias/pauloelias.com"
   },
   "bugs": {
-    "url": "https://github.com/pauloelias/gatsby-tailwind-emotion-starter/issues"
+    "url": "https://github.com/pauloelias/pauloelias.com/issues"
   }
 }
