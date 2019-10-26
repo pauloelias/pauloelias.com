@@ -26,17 +26,40 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/content/posts/`,
+        name: `interviews`,
+        path: `${__dirname}/src/content/interviews/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `journal`,
+        path: `${__dirname}/src/content/journal/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `speaking`,
+        path: `${__dirname}/src/content/speaking/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,
       },
     },
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        extensions: [".mdx", ".md"],
+        extensions: [".mdx", ".md", ".markdown"],
       },
     },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
   ],
 }
