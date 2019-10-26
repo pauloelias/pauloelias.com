@@ -4,7 +4,7 @@ const { createFilePath } = require(`gatsby-source-filesystem`)
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `Mdx`) {
-    const slug = createFilePath({ node, getNode, basePath: `journal` })
+    const slug = createFilePath({ node, getNode, basePath: `content` })
     createNodeField({
       node,
       name: `slug`,
@@ -18,7 +18,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const result = await graphql(`
     query {
-      allMdx(filter: { fileAbsolutePath: { regex: "/journal/" } }) {
+      allMdx(filter: { fileAbsolutePath: { regex: "/blog/" } }) {
         edges {
           node {
             id
