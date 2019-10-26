@@ -4,3 +4,4 @@
 import "./src/styles/globals.css"
 import "typeface-raleway"
 import "typeface-merriweather"
+require("prismjs/themes/prism-tomorrow.css")
