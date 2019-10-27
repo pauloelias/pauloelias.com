@@ -8,15 +8,16 @@ const Excerpt = tw.h3`
 `
 
 export default function SpeakingListing({ data, pageContext }) {
+  console.log(data, pageContext)
   const entries = data.allMdx.edges
-  const { currentPage, numPages } = pageContext
+  const { currentPage, numPages, pathPrefix } = pageContext
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
   const prevPage =
     currentPage - 1 === 1
-      ? "/speaking"
-      : `/speaking/${(currentPage - 1).toString()}`
-  const nextPage = `/speaking/${(currentPage + 1).toString()}`
+      ? `/${pathPrefix}`
+      : `/${pathPrefix}/${(currentPage - 1).toString()}`
+  const nextPage = `/${pathPrefix}/${(currentPage + 1).toString()}`
   return (
     <div>
       {entries.map(({ node }) => (
@@ -48,6 +49,7 @@ export default function SpeakingListing({ data, pageContext }) {
         </Link>
       )}
       {!isFirst &&
+        !isLast &&
         Array.from({ length: numPages }, (_, i) => (
           <Link
             key={`pagination-number${i + 1}`}
