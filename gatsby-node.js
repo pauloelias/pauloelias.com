@@ -12,6 +12,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const result = await graphql(
     `
+      fragment BaseMdxFields on Mdx {
+        id
+        frontmatter {
+          title
+        }
+      }
       query {
         journalEntries: allMdx(
           filter: { fileAbsolutePath: { regex: "/journal/" } }
@@ -20,10 +26,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         ) {
           edges {
             node {
-              id
-              frontmatter {
-                title
-              }
+              ...BaseMdxFields
             }
           }
         }
@@ -34,10 +37,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         ) {
           edges {
             node {
-              id
-              frontmatter {
-                title
-              }
+              ...BaseMdxFields
             }
           }
         }
@@ -48,10 +48,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         ) {
           edges {
             node {
-              id
-              frontmatter {
-                title
-              }
+              ...BaseMdxFields
             }
           }
         }
@@ -88,13 +85,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   Array.from({ length: numPages }).forEach((_, i) => {
     createPage({
       path: i === 0 ? `/journal` : `/journal/${i + 1}`,
-      component: path.resolve("./src/templates/journal-listing.js"),
+      component: path.resolve("./src/templates/listing.js"),
       context: {
         limit: POST_PER_PAGE,
         skip: i * POST_PER_PAGE,
         numPages,
         currentPage: i + 1,
-        filter: `/jounral/`,
+        filter: `/journal/`,
+        pathPrefix: `journal`,
       },
     })
   })
@@ -110,6 +108,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         numPages: speakingnumPages,
         currentPage: i + 1,
         filter: `/speaking/`,
+        pathPrefix: `speaking`,
       },
     })
   })
@@ -125,6 +124,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         numPages: interviewsnumPages,
         currentPage: i + 1,
         filter: `/interviews/`,
+        pathPrefix: `interviews`,
       },
     })
   })
