@@ -2,6 +2,7 @@ import tw from "tailwind.macro"
 import { css } from "@emotion/core"
 import React from "react"
 import { Link, graphql } from "gatsby"
+import Img from "gatsby-image/withIEPolyfill"
 
 import SEO from "../components/seo"
 
@@ -21,8 +22,14 @@ export default ({ data }) => (
   <Container className="container">
     <SEO title="Hi, I'm Paulo Elias!" />
     <Heading>Hello, world!</Heading>
-    <h4>{data.allMdx.totalCount} Posts</h4>
-    {data.allMdx.edges.map(({ node }) => (
+    <h4>{data.allPosts.totalCount} Posts</h4>
+    <Img
+      fluid={data.logoImage.childImageSharp.fluid}
+      objectFit="cover"
+      objectPosition="50% 50%"
+      alt=""
+    />
+    {data.allPosts.edges.map(({ node }) => (
       <div key={node.id}>
         <Link
           to={`/post/${node.frontmatter.slug}`}
@@ -50,10 +57,21 @@ export default ({ data }) => (
 
 export const pageQuery = graphql`
   query {
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    logoImage: file(relativePath: { eq: "head-shot.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 512) {
+          ...GatsbyImageSharpFluid_noBase64
+          presentationWidth
+        }
+      }
+    }
+    allPosts: allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
