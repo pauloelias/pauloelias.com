@@ -7,6 +7,43 @@ function generateSlug(folder, path) {
   return `/${folder}/${slugify(path)}`
 }
 
+function createJournalPages(createPage, edges) {
+  edges.forEach(({ node }) => {
+    createPage({
+      path: node.fields.slug,
+      component: path.resolve(`./src/templates/journal-detail.js`),
+      context: {
+        id: node.id,
+      },
+    })
+  })
+}
+
+function createPaginatedPages(
+  createPage,
+  entries,
+  paginationTemplate,
+  pathPrefix,
+  filter
+) {
+  const numPages = Math.ceil(entries.length / POST_PER_PAGE)
+
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/${pathPrefix}` : `/${pathPrefix}/${i + 1}`,
+      component: path.resolve(paginationTemplate),
+      context: {
+        limit: POST_PER_PAGE,
+        skip: i * POST_PER_PAGE,
+        numPages,
+        currentPage: i + 1,
+        filter,
+        pathPrefix,
+      },
+    })
+  })
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
@@ -27,6 +64,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           edges {
             node {
               ...BaseMdxFields
+              fields {
+                slug
+              }
             }
           }
         }
@@ -61,73 +101,38 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
+  // Grab all journal entries
   const journalEntries = result.data.journalEntries.edges
-  const numPages = Math.ceil(journalEntries.length / POST_PER_PAGE)
-
-  const speakingEntries = result.data.speakingEntries.edges
-  const speakingnumPages = Math.ceil(speakingEntries.length / POST_PER_PAGE)
-
-  const interviewsEntries = result.data.interviewEntries.edges
-  const interviewsnumPages = Math.ceil(interviewsEntries.length / POST_PER_PAGE)
 
   // Create Journal Entries
-  journalEntries.forEach(({ node }) => {
-    createPage({
-      path: generateSlug("journal", node.frontmatter.title),
-      component: path.resolve(`./src/templates/journal-detail.js`),
-      context: {
-        id: node.id,
-      },
-    })
-  })
+  createJournalPages(createPage, journalEntries)
 
-  // Create Journal Entries List
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/journal` : `/journal/${i + 1}`,
-      component: path.resolve("./src/templates/listing.js"),
-      context: {
-        limit: POST_PER_PAGE,
-        skip: i * POST_PER_PAGE,
-        numPages,
-        currentPage: i + 1,
-        filter: `/journal/`,
-        pathPrefix: `journal`,
-      },
-    })
-  })
+  // Create paginted journal entries
+  createPaginatedPages(
+    createPage,
+    journalEntries,
+    `./src/templates/listing.js`,
+    `journal`,
+    `/journal/`
+  )
 
   // Create Speakinf Entries List
-  Array.from({ length: speakingnumPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/speaking` : `/speaking/${i + 1}`,
-      component: path.resolve("./src/templates/listing.js"),
-      context: {
-        limit: POST_PER_PAGE,
-        skip: i * POST_PER_PAGE,
-        numPages: speakingnumPages,
-        currentPage: i + 1,
-        filter: `/speaking/`,
-        pathPrefix: `speaking`,
-      },
-    })
-  })
+  createPaginatedPages(
+    createPage,
+    result.data.speakingEntries.edges,
+    `./src/templates/listing.js`,
+    `speaking`,
+    `/speaking/`
+  )
 
   // Create Interviews Entries List
-  Array.from({ length: interviewsnumPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/interviews` : `/interviews/${i + 1}`,
-      component: path.resolve("./src/templates/listing.js"),
-      context: {
-        limit: POST_PER_PAGE,
-        skip: i * POST_PER_PAGE,
-        numPages: interviewsnumPages,
-        currentPage: i + 1,
-        filter: `/interviews/`,
-        pathPrefix: `interviews`,
-      },
-    })
-  })
+  createPaginatedPages(
+    createPage,
+    result.data.interviewEntries.edges,
+    `./src/templates/listing.js`,
+    `interviews`,
+    `/interviews/`
+  )
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
