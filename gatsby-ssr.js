@@ -1,1 +1,3 @@
-// https://www.gatsbyjs.org/docs/ssr-apis/
+import CustomLayout from "./wrapPageElement"
+
+export const wrapPageElement = CustomLayout
