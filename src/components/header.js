@@ -35,7 +35,7 @@ export default () => {
     <header>
       <div
         css={css`
-          ${tw`flex items-center justify-between px-4 py-3`}
+          ${tw`flex items-center justify-between px-4 py-3 pb-6 border-b border-gray-300`}
         `}
       >
         <div
@@ -50,13 +50,13 @@ export default () => {
               objectPosition="50% 50%"
               alt="Paulo Elias Headshot"
               css={css`
-                ${tw`rounded-full w-16 sm:w-20 md:w-24`}
+                ${tw`rounded-full w-16 sm:w-16 md:w-20`}
               `}
             />
           </Link>
           <h1
             css={css`
-              ${tw`ml-2 sm:ml-3 font-sans text-xl sm:text-2xl antialiased font-normal tracking-wide sm:tracking-tight text-blue-600`}
+              ${tw`ml-2 font-sans text-xl antialiased font-normal tracking-tight sm:ml-3`}
             `}
           >
             <Link to="/">Paulo Elias</Link>
@@ -101,12 +101,12 @@ export default () => {
           `}
         >
           <nav>
-            {navItems.map((item, i) => (
+            {navItems.slice(1).map((item, i) => (
               <Link
                 to={item.link}
                 key={i}
                 css={css`
-                  ${tw`text-blue-500 hover:text-blue-300 hover:underline`}
+                  ${tw`ml-6 font-sans text-2xl font-normal tracking-wide capitalize hover:text-blue-600 hover:underline md:ml-10`}
                 `}
               >
                 {item.name}
