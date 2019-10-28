@@ -2,7 +2,7 @@ import tw from "tailwind.macro"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import React, { useState } from "react"
-import { Link, useStaticQuery } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const navItems = [

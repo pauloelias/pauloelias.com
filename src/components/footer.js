@@ -39,19 +39,19 @@ export default () => (
   >
     <div
       css={css`
-        ${tw`flex items-center`}
+        ${tw`flex flex-col items-center justify-center md:flex-row md:justify-start`}
       `}
     >
       <div
         css={css`
-          ${tw`flex items-center mr-4`}
+          ${tw`flex items-center order-2 mt-3 md:mt-0 md:mr-4 md:order-none`}
         `}
       >
         &copy; {new Date().getFullYear()} Paulo Elias.
       </div>
       <div
         css={css`
-          ${tw`flex items-center`}
+          ${tw`flex items-center order-1 md:order-none`}
         `}
       >
         {socialMedia.map((item, i) => (
@@ -62,7 +62,7 @@ export default () => (
             rel="noopener noreferrer"
             aria-label={`${item.name} Icon`}
             css={css`
-              ${tw`mr-2 text-xl text-gray-600`}
+              ${tw`mr-2 text-xl text-gray-600 hover:text-blue-900`}
             `}
           >
             {item.icon}

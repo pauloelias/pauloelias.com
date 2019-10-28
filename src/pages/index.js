@@ -9,7 +9,7 @@ export default ({ data }) => (
     <SEO title="Hello, I'm Paulo Elias" />
     <div
       css={css`
-        ${tw`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sans md:font-light text-blue-700`}
+        ${tw`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sans md:font-light text-blue-800`}
       `}
     >
       <p
