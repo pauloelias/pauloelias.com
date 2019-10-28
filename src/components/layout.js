@@ -17,6 +17,11 @@ const Layout = ({ children }) => (
         body {
           ${tw`h-screen antialiased`}
         }
+        .detail-page {
+          p {
+            ${tw`mt-6 leading-relaxed sm:leading-loose`}
+          }
+        }
       `}
     />
     <Header />

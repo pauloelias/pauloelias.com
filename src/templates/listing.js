@@ -37,7 +37,7 @@ export default function SpeakingListing({ data, pageContext }) {
       {pageDescription && (
         <p
           css={css`
-            ${tw`mt-3 lg:mt-6 text-lg sm:text-xl lg:text-2xl text-gray-700`}
+            ${tw`mt-3 text-lg text-gray-700 sm:text-xl lg:mt-6 lg:text-2xl`}
           `}
         >
           {pageDescription}
