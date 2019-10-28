@@ -32,10 +32,14 @@ const socialMedia = [
 ]
 
 export default () => (
-  <footer>
+  <footer
+    css={css`
+      ${tw`px-4 p-6 border-t border-gray-200 text-gray-500 md:border-gray-400`}
+    `}
+  >
     <div
       css={css`
-        ${tw`flex items-center px-4 py-3 pt-6 border-t border-gray-400 text-gray-500`}
+        ${tw`flex items-center`}
       `}
     >
       <div

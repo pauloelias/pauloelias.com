@@ -8,21 +8,21 @@ import Footer from "./footer"
 const Layout = ({ children }) => (
   <div
     css={css`
-      ${tw`flex flex-col mx-auto max-w-full p-4 lg:max-w-4xl xl:max-w-5xl`}
+      ${tw`flex flex-col mx-auto max-w-5xl px-6 md:px-8`}
     `}
   >
     <Global
       styles={css`
         html,
         body {
-          ${tw`h-screen`}
+          ${tw`h-screen antialiased`}
         }
       `}
     />
     <Header />
     <main
       css={css`
-        ${tw`flex-1 px-4 py-3 md:py-6 lg:pt-12`}
+        ${tw`flex-1 px-4 py-6 md:py-10 lg:py-16`}
       `}
     >
       {children}

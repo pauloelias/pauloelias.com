@@ -1,84 +1,44 @@
 import tw from "tailwind.macro"
 import { css } from "@emotion/core"
 import React from "react"
-import { Link, graphql } from "gatsby"
-import Img from "gatsby-image/withIEPolyfill"
 
 import SEO from "../components/seo"
 
-const Container = tw.div`
-  mx-auto
-`
-
-const Heading = tw.h1`
-  font-sans font-semibold text-2xl
-`
-
-const Excerpt = tw.h3`
-  font-serif text-1xl
-`
-
 export default ({ data }) => (
-  <Container className="container">
-    <SEO title="Hi, I'm Paulo Elias!" />
-    <Heading>Hello, world!</Heading>
-    <h4>{data.allPosts.totalCount} Posts</h4>
-    <Img
-      fluid={data.logoImage.childImageSharp.fluid}
-      objectFit="cover"
-      objectPosition="50% 50%"
-      alt=""
-    />
-    {data.allPosts.edges.map(({ node }) => (
-      <div key={node.id}>
-        <Link
-          to={`/post/${node.frontmatter.slug}`}
-          css={css`
-            text-decoration: none;
-            color: inherit;
-          `}
-        >
-          <Excerpt>
-            {node.frontmatter.title}{" "}
-            <span
-              css={css`
-                color: #bbb;
-              `}
-            >
-              — {node.frontmatter.date}
-            </span>
-          </Excerpt>
-          <p>{node.frontmatter.description}</p>
-        </Link>
-      </div>
-    ))}
-  </Container>
+  <>
+    <SEO title="Hello, I'm Paulo Elias" />
+    <div
+      css={css`
+        ${tw`text-xl sm:text-2xl md:text-3xl lg:text-4xl font-sans md:font-light text-blue-700`}
+      `}
+    >
+      <p
+        css={css`
+          ${tw``}
+        `}
+      >
+        Natoque nisl odio mi tristique nulla quis vel varius commodo lacinia
+        cras, tellus fames iaculis mollis amet sapien metus vestibulum justo
+        class.
+      </p>
+      <p
+        css={css`
+          ${tw`mt-6 sm:mt-8 md:mt-10`}
+        `}
+      >
+        Turpis pulvinar felis porttitor molestie magnis lacus vehicula ipsum mi,
+        elementum auctor aliquam lobortis urna duis nec pellentesque massa, at
+        blandit vivamus facilisi ante dictum ac sodales.
+      </p>
+      <p
+        css={css`
+          ${tw`mt-6 sm:mt-8 md:mt-10`}
+        `}
+      >
+        Natoque nisl odio mi tristique nulla quis vel varius commodo lacinia
+        cras, tellus fames iaculis mollis amet sapien metus vestibulum justo
+        class.
+      </p>
+    </div>
+  </>
 )
-
-export const pageQuery = graphql`
-  query {
-    logoImage: file(relativePath: { eq: "head-shot.jpg" }) {
-      childImageSharp {
-        fluid(maxWidth: 512) {
-          ...GatsbyImageSharpFluid_noBase64
-          presentationWidth
-        }
-      }
-    }
-    allPosts: allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            date(formatString: "DD MMMM, YYYY")
-            description
-          }
-        }
-      }
-    }
-  }
-`

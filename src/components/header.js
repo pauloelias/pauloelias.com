@@ -32,10 +32,14 @@ export default () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <header>
+    <header
+      css={css`
+        ${tw`px-4 py-6 md:border-b md:border-gray-400`}
+      `}
+    >
       <div
         css={css`
-          ${tw`flex items-center justify-between px-4 py-3 pb-6 md:border-b md:border-gray-400`}
+          ${tw`flex items-center justify-between`}
         `}
       >
         <div
