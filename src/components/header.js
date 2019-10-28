@@ -19,7 +19,7 @@ const NavMenu = styled.div`
 export default () => {
   const data = useStaticQuery(graphql`
     query HeaderQuery {
-      logoImage: file(relativePath: { eq: "head-shot.jpg" }) {
+      logoImage: file(relativePath: { eq: "Elias_Paulo-2604.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 125) {
             ...GatsbyImageSharpFluid
