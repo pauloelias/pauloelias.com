@@ -3,3 +3,7 @@
   the rest of Tailwind's classes in the project
 */
 @import "tailwindcss/base";
+
+html {
+  @apply text-blue-900;
+}
