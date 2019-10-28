@@ -35,7 +35,7 @@ export default () => {
     <header>
       <div
         css={css`
-          ${tw`flex items-center justify-between px-4 py-3 pb-6 border-b border-gray-300`}
+          ${tw`flex items-center justify-between px-4 py-3 pb-6 md:border-b md:border-gray-400`}
         `}
       >
         <div
@@ -70,7 +70,7 @@ export default () => {
           <button
             type="button"
             css={css`
-              ${tw`block text-blue-600 hover:text-blue-400 focus:text-blue-400 focus:outline-none`}
+              ${tw`block hover:text-blue-400 focus:text-blue-400 focus:outline-none`}
             `}
             open={open}
             onClick={() => setOpen(!open)}

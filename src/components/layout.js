@@ -8,7 +8,7 @@ import Footer from "./footer"
 const Layout = ({ children }) => (
   <div
     css={css`
-      ${tw`flex flex-col mx-auto max-w-full p-4 h-screen lg:max-w-4xl xl:max-w-5xl`}
+      ${tw`flex flex-col mx-auto max-w-full p-4 lg:max-w-4xl xl:max-w-5xl`}
     `}
   >
     <Global
@@ -22,7 +22,7 @@ const Layout = ({ children }) => (
     <Header />
     <main
       css={css`
-        ${tw`flex-1`}
+        ${tw`flex-1 px-4 py-3 md:py-6 lg:pt-12`}
       `}
     >
       {children}

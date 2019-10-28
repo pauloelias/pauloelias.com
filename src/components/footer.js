@@ -35,10 +35,9 @@ export default () => (
   <footer>
     <div
       css={css`
-        ${tw`flex items-center px-4 py-3 pt-6 border-t border-gray-300 text-gray-500`}
+        ${tw`flex items-center px-4 py-3 pt-6 border-t border-gray-400 text-gray-500`}
       `}
     >
-      x
       <div
         css={css`
           ${tw`flex items-center mr-4`}
