@@ -70,7 +70,7 @@ export default function SpeakingListing({ data, pageContext }) {
               >
                 <span
                   css={css`
-                    ${tw`mb-1 block text-gray-500 font-sans text-sm font-semibold uppercase md:text-base lg:text-lg md:mb-2`}
+                    ${tw`mb-1 block text-gray-500 font-sans text-xs font-semibold uppercase md:text-sm md:mb-2`}
                   `}
                 >
                   {node.frontmatter.date}
