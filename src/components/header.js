@@ -1,9 +1,11 @@
 import tw from "tailwind.macro"
 import { css } from "@emotion/core"
-import styled from "@emotion/styled"
 import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+
+import Burger from "./burger"
+import BurgerMenu from "./burger-menu"
 
 const navItems = [
   { name: `Home`, link: `/` },
@@ -11,10 +13,6 @@ const navItems = [
   { name: `Speaking`, link: `/speaking` },
   { name: `Interviews`, link: `/interviews` },
 ]
-
-const NavMenu = styled.div`
-  display: ${props => (props.open ? `flex` : `none`)};
-`
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -71,35 +69,9 @@ export default () => {
             ${tw`relative z-10 md:hidden`}
           `}
         >
-          <button
-            type="button"
-            css={css`
-              ${tw`block hover:text-blue-400 focus:text-blue-400 focus:outline-none`}
-            `}
-            open={open}
-            onClick={() => setOpen(!open)}
-          >
-            <svg
-              css={css`
-                ${tw`h-8 w-8 fill-current`}
-              `}
-              viewBox="0 0 24 24"
-            >
-              {!open ? (
-                <path
-                  fillRule="evenodd"
-                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
-                />
-              ) : (
-                <path
-                  fillRule="evenodd"
-                  d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
-                />
-              )}
-            </svg>
-          </button>
+          <Burger open={open} handleClick={() => setOpen(!open)} />
         </div>
-        <NavMenu
+        <div
           css={css`
             ${tw`hidden md:block`}
           `}
@@ -117,33 +89,13 @@ export default () => {
               </Link>
             ))}
           </nav>
-        </NavMenu>
+        </div>
       </div>
-      <NavMenu
+      <BurgerMenu
         open={open}
-        css={css`
-          ${tw`flex-col items-center h-screen absolute inset-0 px-2 py-3 bg-blue-900 md:hidden`}
-        `}
-      >
-        <nav
-          css={css`
-            ${tw`mt-20`}
-          `}
-        >
-          {navItems.map((item, i) => (
-            <Link
-              to={item.link}
-              key={i}
-              css={css`
-                ${tw`mt-6 md:mt-8 lg:mt-10 xl:mt-12 block font-serif font-hairline text-5xl text-blue-100 hover:text-blue-500 hover:underline`}
-              `}
-              onClick={() => setOpen(!open)}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-      </NavMenu>
+        navItems={navItems}
+        handleClick={() => setOpen(!open)}
+      />
     </header>
   )
 }
