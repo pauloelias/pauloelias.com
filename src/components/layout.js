@@ -8,7 +8,7 @@ import Footer from "./footer"
 const Layout = ({ children }) => (
   <div
     css={css`
-      ${tw`flex flex-col mx-auto max-w-5xl px-6 md:px-8`}
+      ${tw`flex flex-col mx-auto max-w-5xl px-2 md:px-8`}
     `}
   >
     <Global
@@ -16,11 +16,6 @@ const Layout = ({ children }) => (
         html,
         body {
           ${tw`h-screen antialiased`}
-        }
-        .detail-page {
-          p {
-            ${tw`mt-6 leading-relaxed sm:leading-loose`}
-          }
         }
       `}
     />

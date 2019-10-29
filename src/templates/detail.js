@@ -1,5 +1,5 @@
 import tw from "tailwind.macro"
-import { css } from "@emotion/core"
+import { Global, css } from "@emotion/core"
 import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -12,9 +12,22 @@ export default function JoutnalDetail({ data: { mdx } }) {
         ${tw`font-serif text-lg lg:text-xl text-gray-700`}
       `}
     >
+      <Global
+        styles={css`
+          html,
+          body {
+            ${tw`h-screen antialiased`}
+          }
+          .detail-page {
+            p {
+              ${tw`mt-6 text-base leading-loose sm:leading-relaxed`}
+            }
+          }
+        `}
+      />
       <h2
         css={css`
-          ${tw`text-blue-900 font-sans font-medium text-xl sm:font-normal sm:text-2xl md:text-3xl lg:text-4xl`}
+          ${tw`text-blue-900 font-sans font-medium text-2xl leading-tight sm:font-normal md:text-3xl lg:text-4xl`}
         `}
       >
         {mdx.frontmatter.title}
