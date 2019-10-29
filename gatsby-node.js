@@ -7,7 +7,7 @@ function generateSlug(folder, path) {
   return `/${folder}/${slugify(path)}`
 }
 
-const createEntryPages = (createPage, edges) => {
+function createEntryPages(createPage, edges) {
   edges.forEach(({ node }) => {
     createPage({
       path: node.fields.slug,
@@ -112,11 +112,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Create Journal Entries
   createEntryPages(createPage, journalEntries)
-  // Create Speaking Entries
-  createEntryPages(createPage, speakingEntries)
-  // Create Interview Entries
-  createEntryPages(createPage, interviewEntries)
-
   // Create paginted journal entries
   createPaginatedPages(
     createPage,
@@ -128,6 +123,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `Ut ipsum euismod ridiculus varius aliquam lorem, neque scelerisque mattis vulputate pulvinar dapibus, litora fringilla justo lectus interdum.`
   )
 
+  // Create Speaking Entries
+  createEntryPages(createPage, speakingEntries)
   // Create Speakinf Entries List
   createPaginatedPages(
     createPage,
@@ -139,6 +136,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `Ut ipsum euismod ridiculus varius aliquam lorem, neque scelerisque mattis vulputate pulvinar dapibus, litora fringilla justo lectus interdum.`
   )
 
+  // Create Interview Entries
+  createEntryPages(createPage, interviewEntries)
   // Create Interviews Entries List
   createPaginatedPages(
     createPage,
