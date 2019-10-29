@@ -45,14 +45,21 @@ export default () => {
             ${tw`flex items-center`}
           `}
         >
-          <Link to="/" rel="home" title="Paulo Elias">
+          <Link
+            to="/"
+            rel="home"
+            title="Paulo Elias"
+            css={css`
+              ${tw`block rounded-full overflow-hidden border-2 border-gray-400 focus:outline-none focus:border-white`}
+            `}
+          >
             <Img
               fluid={data.logoImage.childImageSharp.fluid}
               objectFit="cover"
               objectPosition="50% 50%"
               alt="Paulo Elias Headshot"
               css={css`
-                ${tw`rounded-full w-16 sm:w-16 md:w-20`}
+                ${tw`w-16 md:w-20`}
               `}
             />
           </Link>
