@@ -6,7 +6,8 @@ export default props => (
   <button
     type="button"
     css={css`
-      ${tw`block hover:text-blue-400 focus:text-blue-400 focus:outline-none`}
+      ${tw`block hover:text-gray-400 focus:text-gray-400 focus:outline-none`}
+      ${props.open ? tw`text-blue-100` : tw`text-gray-600`}
     `}
     onClick={props.handleClick}
   >
