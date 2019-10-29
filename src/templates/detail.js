@@ -4,6 +4,8 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
+import { Heading } from "../components/ui/text"
+
 export default function JoutnalDetail({ data: { mdx } }) {
   return (
     <div
@@ -25,13 +27,7 @@ export default function JoutnalDetail({ data: { mdx } }) {
           }
         `}
       />
-      <h2
-        css={css`
-          ${tw`text-blue-900 font-sans font-medium text-2xl leading-tight sm:font-normal md:text-3xl lg:text-4xl`}
-        `}
-      >
-        {mdx.frontmatter.title}
-      </h2>
+      <Heading level="h2">{mdx.frontmatter.title}</Heading>
       <div
         css={css`
           ${tw`mt-4 lg:mt-6`}
