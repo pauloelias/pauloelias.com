@@ -1,5 +1,5 @@
 import tw from "tailwind.macro"
-import { Global, css } from "@emotion/core"
+import { css } from "@emotion/core"
 import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -14,19 +14,6 @@ export default function JoutnalDetail({ data: { mdx } }) {
         ${tw`font-serif text-lg lg:text-xl text-gray-700`}
       `}
     >
-      <Global
-        styles={css`
-          html,
-          body {
-            ${tw`h-screen antialiased`}
-          }
-          .detail-page {
-            p {
-              ${tw`mt-6 text-base leading-loose sm:leading-relaxed`}
-            }
-          }
-        `}
-      />
       <Heading level="h2">{mdx.frontmatter.title}</Heading>
       <div
         css={css`
@@ -42,13 +29,15 @@ export default function JoutnalDetail({ data: { mdx } }) {
 export const pageQuery = graphql`
   query($id: String) {
     mdx(id: { eq: $id }) {
-      id
       body
       fields {
         slug
       }
       frontmatter {
+        date(formatString: "MMMM DD, YYYY")
         title
+        url
+        resourcesUrl
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 800) {

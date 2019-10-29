@@ -47,6 +47,14 @@ export const Text = props => {
       )
     case `body`:
     default:
-      return <p>{children}</p>
+      return (
+        <p
+          css={css`
+            ${tw`font-serif mt-6 lg:w-2/3 lg:mx-auto`}
+          `}
+        >
+          {children}
+        </p>
+      )
   }
 }
