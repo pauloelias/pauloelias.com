@@ -3,7 +3,7 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export default props => {
+export default function Pagination(props) {
   const {
     context: { currentPage, numPages, pathPrefix },
   } = props
