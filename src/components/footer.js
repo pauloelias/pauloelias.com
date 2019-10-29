@@ -39,19 +39,19 @@ export default () => (
   >
     <div
       css={css`
-        ${tw`flex flex-col items-center justify-center md:flex-row md:justify-start`}
+        ${tw`flex items-center justify-between md:justify-start`}
       `}
     >
       <div
         css={css`
-          ${tw`flex items-center order-2 mt-3 md:mt-0 md:mr-4 md:order-none`}
+          ${tw`flex items-center md:mr-4`}
         `}
       >
         &copy; {new Date().getFullYear()} Paulo Elias.
       </div>
       <div
         css={css`
-          ${tw`flex items-center order-1 md:order-none`}
+          ${tw`flex items-center`}
         `}
       >
         {socialMedia.map((item, i) => (
