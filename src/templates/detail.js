@@ -8,16 +8,16 @@ import { Heading } from "../components/ui/text"
 
 export default function JoutnalDetail({ data: { mdx } }) {
   return (
-    <div className="detail-page">
+    <section>
       <Heading level="h2">{mdx.frontmatter.title}</Heading>
-      <div
+      <article
         css={css`
           ${tw`mt-4 lg:mt-10`}
         `}
       >
         <MDXRenderer>{mdx.body}</MDXRenderer>
-      </div>
-    </div>
+      </article>
+    </section>
   )
 }
 

@@ -73,7 +73,7 @@ export const Text = props => {
       return (
         <p
           css={css`
-            ${tw`mt-4 font-serif font-normal text-base leading-relaxed lg:w-2/3 lg:mx-auto lg:mt-10 lg:text-lg lg:leading-loose`}
+            ${tw`mt-8 font-serif font-normal text-lg leading-loose md:text-xl lg:mx-auto lg:mt-10 lg:w-2/3 lg:text-lg`}
           `}
         >
           {children}
