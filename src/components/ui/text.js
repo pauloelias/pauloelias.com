@@ -1,32 +1,55 @@
 import tw from "tailwind.macro"
 import { css } from "@emotion/core"
 import React from "react"
+import { IoIosQuote } from "react-icons/io"
 
 export const Heading = props => {
   const { children, level } = props
 
   switch (level) {
     case `h1`:
-    default:
-      return <h1>{children}</h1>
+      return (
+        <h1
+          css={css`
+            ${tw`text-gray-900 font-sans font-hairline text-3xl sm:font-normal sm:text-3xl md:text-4xl lg:mx-auto lg:w-2/3 lg:text-5xl`}
+          `}
+        >
+          {children}
+        </h1>
+      )
     case `h2`:
+    default:
       return (
         <h2
           css={css`
-            ${tw`text-blue-900 font-sans font-medium text-2xl leading-tight sm:font-normal md:text-3xl lg:text-4xl`}
+            ${tw`text-gray-900 font-sans font-medium text-2xl leading-tight sm:font-normal sm:text-2xl md:text-3xl lg:mx-auto lg:w-2/3 lg:text-4xl`}
           `}
         >
           {children}
         </h2>
       )
     case `h3`:
-      return <h3>{children}</h3>
+      return (
+        <h3
+          css={css`
+            ${tw`text-gray-900 font-sans font-semibold text-xl leading-tight uppercase sm:text-xl sm:font-normal md:text-2xl md:font-thin lg:mx-auto lg:w-2/3 lg:text-3xl`}
+          `}
+        >
+          {children}
+        </h3>
+      )
     case `h4`:
-      return <h4>{children}</h4>
     case `h5`:
-      return <h5>{children}</h5>
     case `h6`:
-      return <h6>{children}</h6>
+      return (
+        <h4
+          css={css`
+            ${tw`text-gray-600 font-sans font-semibold text-lg leading-tight uppercase lg:mx-auto lg:w-2/3 lg:text-xl`}
+          `}
+        >
+          {children}
+        </h4>
+      )
   }
 }
 
@@ -50,7 +73,7 @@ export const Text = props => {
       return (
         <p
           css={css`
-            ${tw`font-serif mt-6 lg:w-2/3 lg:mx-auto`}
+            ${tw`mt-4 font-serif font-normal text-base leading-relaxed lg:w-2/3 lg:mx-auto lg:mt-10 lg:text-lg lg:leading-loose`}
           `}
         >
           {children}
@@ -58,3 +81,22 @@ export const Text = props => {
       )
   }
 }
+
+export const Blockquote = ({ children }) => (
+  <blockquote
+    css={css`
+      ${tw`relative z-10 my-6 py-3 border-t border-b border-gray-400 md:my-10 md:py-6 lg:mx-auto lg:py-8 lg:px-4 lg:w-4/5`}
+      & p {
+        ${tw`m-0 w-full font-sans font-hariline text-2xl lg:text-3xl lg:leading-relaxed`}
+      }
+    `}
+  >
+    <IoIosQuote
+      css={css`
+        ${tw`absolute top-0 left-0 mt-1 -ml-6 md:mt-3 lg:mt-3 lg:-ml-3 opacity-25`}
+      `}
+      size="3em"
+    />
+    {children}
+  </blockquote>
+)

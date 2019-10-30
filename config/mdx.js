@@ -1,6 +1,6 @@
 import React from "react"
 
-import { Heading, Text } from "../src/components/ui/text"
+import { Heading, Text, Blockquote } from "../src/components/ui/text"
 
 export default {
   h1: props => <Heading level="h1">{props.children}</Heading>,
@@ -10,4 +10,5 @@ export default {
   h5: props => <Heading level="h5">{props.children}</Heading>,
   h6: props => <Heading level="h6">{props.children}</Heading>,
   p: props => <Text type="body">{props.children}</Text>,
+  blockquote: props => <Blockquote>{props.children}</Blockquote>,
 }
