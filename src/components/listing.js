@@ -4,29 +4,28 @@ import React from "react"
 import { Link } from "gatsby"
 
 export default props => (
-  <>
+  <div {...props}>
     {props.entries.map(({ node }, i) => (
       <div
         key={node.id}
         css={css`
-          ${tw`border-t border-gray-400 py-6 sm:py-8 lg:py-10`}
+          ${tw`py-6 border-t border-gray-300 sm:py-8 lg:py-10`}
         `}
       >
         <Link
           to={node.fields.slug}
           css={css`
-            text-decoration: none;
-            color: inherit;
+            ${tw`flex flex-col no-underline outline-none focus:shadow-outline`}
           `}
         >
           <h3
             css={css`
-              ${tw`text-gray-900 font-serif text-lg lg:text-xl`}
+              ${tw`mb-1 text-gray-900 font-serif text-lg leading-relaxed lg:text-xl`}
             `}
           >
             <span
               css={css`
-                ${tw`mb-1 block text-gray-500 font-sans text-xs font-semibold uppercase md:text-sm md:mb-2`}
+                ${tw`block mb-1 text-gray-500 font-sans text-xs font-semibold uppercase leading-none`}
               `}
             >
               {node.frontmatter.date}
@@ -35,7 +34,7 @@ export default props => (
           </h3>
           <p
             css={css`
-              ${tw`mt-2 text-gray-700 text-sm sm:text-base lg:text-lg md:mt-3`}
+              ${tw`text-base text-gray-600 leading-snug md:leading-relaxed`}
             `}
           >
             {node.frontmatter.description}
@@ -43,5 +42,5 @@ export default props => (
         </Link>
       </div>
     ))}
-  </>
+  </div>
 )

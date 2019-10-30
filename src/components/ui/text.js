@@ -13,6 +13,7 @@ export const Heading = props => {
           css={css`
             ${tw`text-gray-900 font-sans font-hairline text-3xl sm:font-normal sm:text-3xl md:text-4xl lg:mx-auto lg:w-2/3 lg:text-5xl`}
           `}
+          {...props}
         >
           {children}
         </h1>
@@ -24,6 +25,7 @@ export const Heading = props => {
           css={css`
             ${tw`text-gray-900 font-sans font-medium text-2xl leading-tight sm:font-normal sm:text-2xl md:text-3xl lg:mx-auto lg:w-2/3 lg:text-4xl`}
           `}
+          {...props}
         >
           {children}
         </h2>
@@ -34,6 +36,7 @@ export const Heading = props => {
           css={css`
             ${tw`text-gray-900 font-sans font-semibold text-xl leading-tight uppercase sm:text-xl sm:font-normal md:text-2xl md:font-thin lg:mx-auto lg:w-2/3 lg:text-3xl`}
           `}
+          {...props}
         >
           {children}
         </h3>
@@ -46,6 +49,7 @@ export const Heading = props => {
           css={css`
             ${tw`text-gray-600 font-sans font-semibold text-lg leading-tight uppercase lg:mx-auto lg:w-2/3 lg:text-xl`}
           `}
+          {...props}
         >
           {children}
         </h4>
@@ -64,6 +68,7 @@ export const Text = props => {
             ${tw`text-blue-800 font-sans text-xl sm:text-2xl md:text-3xl md:font-light lg:text-4xl text-blue-800`}
             ${padding && tw`mt-6 sm:mt-8 md:mt-10`}
           `}
+          {...props}
         >
           {children}
         </p>
@@ -75,14 +80,15 @@ export const Text = props => {
           css={css`
             ${tw`mt-8 font-serif font-normal text-lg leading-loose md:text-xl lg:mx-auto lg:mt-10 lg:w-2/3 lg:text-lg`}
           `}
+          {...props}
         >
-          {children}
+          {props.children}
         </p>
       )
   }
 }
 
-export const Blockquote = ({ children }) => (
+export const Blockquote = props => (
   <blockquote
     css={css`
       ${tw`relative z-10 my-6 py-3 border-t border-b border-gray-400 md:my-10 md:py-6 lg:mx-auto lg:py-8 lg:px-4 lg:w-4/5`}
@@ -90,6 +96,7 @@ export const Blockquote = ({ children }) => (
         ${tw`m-0 w-full font-sans font-hariline text-2xl lg:text-3xl lg:leading-relaxed`}
       }
     `}
+    {...props}
   >
     <IoIosQuote
       css={css`
@@ -97,11 +104,11 @@ export const Blockquote = ({ children }) => (
       `}
       size="3em"
     />
-    {children}
+    {props.children}
   </blockquote>
 )
 
-export const Ul = ({ children }) => (
+export const Ul = props => (
   <ul
     css={css`
       ${tw`mt-8 list-disc list-inside lg:mx-auto lg:mt-10 lg:w-2/3`}
@@ -109,17 +116,19 @@ export const Ul = ({ children }) => (
         ${tw`my-1 mx-0 pl-4 lg:my-2 lg:pl-6 lg:w-auto`}
       }
     `}
+    {...props}
   >
-    {children}
+    {props.children}
   </ul>
 )
 
-export const Li = ({ children }) => (
+export const Li = props => (
   <li
     css={css`
       ${tw`font-serif font-normal text-lg leading-relaxed md:text-xl lg:text-lg`}
     `}
+    {...props}
   >
-    {children}
+    {props.children}
   </li>
 )

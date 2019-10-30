@@ -5,6 +5,7 @@ import { graphql } from "gatsby"
 
 import Listing from "../components/listing"
 import Pagination from "../components/pagination"
+import { Heading, Text } from "../components/ui/text"
 
 export default function SpeakingListing({ data, pageContext }) {
   const entries = data.allMdx.edges
@@ -12,39 +13,23 @@ export default function SpeakingListing({ data, pageContext }) {
 
   return (
     <>
-      {pageHeading && (
-        <h2
-          css={css`
-            ${tw`text-blue-900 font-sans font-medium text-xl sm:font-normal sm:text-2xl md:text-3xl lg:text-4xl`}
-          `}
-        >
-          {pageHeading}
-        </h2>
-      )}
+      {pageHeading && <Heading level="h2">{pageHeading}</Heading>}
 
-      {pageDescription && (
-        <p
-          css={css`
-            ${tw`mt-3 text-lg text-gray-700 sm:text-xl lg:mt-6 lg:text-2xl`}
-          `}
-        >
-          {pageDescription}
-        </p>
-      )}
+      {pageDescription && <Text type="body">{pageDescription}</Text>}
 
       <div
         css={css`
-          ${tw`mt-6 text-lg text-gray-700 lg:mt-8 lg:mt-10 sm:text-xl lg:text-2xl`}
+          ${tw`my-6 border-b border-gray-300 sm:my-8 lg:my-10 lg:mx-auto lg:w-2/3`}
         `}
       >
         <Listing entries={entries} />
-        <Pagination
-          context={pageContext}
-          css={css`
-            ${tw`mt-6 lg:mt-8 lg:mt-10`}
-          `}
-        />
       </div>
+      <Pagination
+        context={pageContext}
+        css={css`
+          ${tw`mt-6 lg:mt-8 lg:mt-10`}
+        `}
+      />
     </>
   )
 }
@@ -64,7 +49,7 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            date(formatString: "DD MMMM, YYYY")
+            date(formatString: "MMMM DD, YYYY")
             title
             description
             url
