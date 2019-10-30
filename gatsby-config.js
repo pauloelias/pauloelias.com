@@ -57,12 +57,22 @@ module.exports = {
         extensions: [".mdx", ".md", ".markdown"],
         gatsbyRemarkPlugins: [
           {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              backgroundColor: "none",
+              linkImagesToOriginal: false,
+              withWebp: true,
+            },
+          },
+          {
             resolve: "gatsby-remark-prismjs",
             options: {
               noInlineHighlight: true,
             },
           },
         ],
+        plugins: [`gatsby-remark-images`],
       },
     },
     `gatsby-plugin-postcss`,
