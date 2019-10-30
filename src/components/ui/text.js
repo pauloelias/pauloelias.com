@@ -100,3 +100,26 @@ export const Blockquote = ({ children }) => (
     {children}
   </blockquote>
 )
+
+export const Ul = ({ children }) => (
+  <ul
+    css={css`
+      ${tw`mt-8 list-disc list-inside lg:mx-auto lg:mt-10 lg:w-2/3`}
+      ul {
+        ${tw`my-1 mx-0 pl-4 lg:my-2 lg:pl-6 lg:w-auto`}
+      }
+    `}
+  >
+    {children}
+  </ul>
+)
+
+export const Li = ({ children }) => (
+  <li
+    css={css`
+      ${tw`font-serif font-normal text-lg leading-relaxed md:text-xl lg:text-lg`}
+    `}
+  >
+    {children}
+  </li>
+)
