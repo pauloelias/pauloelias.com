@@ -19,15 +19,6 @@
   width: 100vw !important;
 }
 
-@screen sm {
-  .gatsby-resp-image-wrapper {
-    margin-right: -25vw !important;
-    margin-left: -25vw !important;
-    max-width: 50vw !important;
-    width: 50vw !important;
-  }
-}
-
 @screen lg {
   .gatsby-highlight,
   .gatsby-resp-image-wrapper {
@@ -36,5 +27,12 @@
 
   .gatsby-highlight {
     @apply mx-auto w-4/5;
+  }
+
+  .gatsby-resp-image-wrapper {
+    margin-right: -25vw !important;
+    margin-left: -25vw !important;
+    max-width: 50vw !important;
+    width: 50vw !important;
   }
 }
