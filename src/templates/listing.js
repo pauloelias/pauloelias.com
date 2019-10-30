@@ -27,7 +27,7 @@ export default function SpeakingListing({ data, pageContext }) {
       <Pagination
         context={pageContext}
         css={css`
-          ${tw`mt-6 lg:mt-8 lg:mt-10`}
+          ${tw`flex items-center justify-center mt-6 text-gray-600 font-bold tracking-tight outline-none focus:shadow-outline lg:mt-8 lg:mt-10 hover:underline`}
         `}
       />
     </>
