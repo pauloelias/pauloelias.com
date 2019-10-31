@@ -9,13 +9,13 @@ export default props => (
       <div
         key={node.id}
         css={css`
-          ${tw`border-t border-gray-300`}
+          ${tw`flex flex-col pt-4 pb-3 px-3 border-t border-gray-300 sm:pt-7 sm:pb-5 sm:px-4 md:pt-8 md:pb-6 md:px-5`}
         `}
       >
         <Link
           to={node.fields.slug}
           css={css`
-            ${tw`flex flex-col pt-4 pb-3 px-3 no-underline outline-none hover:bg-gray-100 focus:shadow-outline sm:pt-7 sm:pb-5 sm:px-4 md:pt-8 md:pb-6 md:px-5`}
+            ${tw`no-underline outline-none hover:bg-gray-100 focus:shadow-outline`}
           `}
         >
           <h3
