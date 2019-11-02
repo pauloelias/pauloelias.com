@@ -13,7 +13,6 @@ export default props => {
             ${tw`text-blue-800 font-sans text-xl sm:text-2xl md:text-3xl md:font-light lg:text-4xl text-blue-800`}
             ${padding && tw`mt-6 sm:mt-8 md:mt-10`}
           `}
-          {...props}
         >
           {children}
         </p>
