@@ -6,9 +6,9 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop -H 0.0.0.0 -p 8000",
+    "develop": "gatsby develop -H 0.0.0.0 -p 8000",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "yarn clean && gatsby develop",
+    "start": "gatsby develop -H 0.0.0.0 -p 8000",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
   },
