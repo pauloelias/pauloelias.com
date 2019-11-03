@@ -3,9 +3,10 @@
 import React from "react"
 import { Link } from "gatsby"
 
-export default function Pagination(props) {
+export default props => {
   const {
     context: { currentPage, numPages, pathPrefix },
+    showPageNumbers,
   } = props
 
   const isFirst = currentPage === 1
@@ -22,7 +23,8 @@ export default function Pagination(props) {
           ← Previous Page
         </Link>
       )}
-      {!isFirst &&
+      {showPageNumbers &&
+        !isFirst &&
         !isLast &&
         Array.from({ length: numPages }, (_, i) => (
           <Link

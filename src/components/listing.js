@@ -9,23 +9,23 @@ export default props => (
       <div
         key={node.id}
         css={css`
-          ${tw`flex flex-col pt-4 pb-3 px-3 border-t border-gray-300 sm:pt-7 sm:pb-5 sm:px-4 md:pt-8 md:pb-6 md:px-5`}
+          ${tw`flex flex-col pt-4 pb-3 border-t border-gray-300 sm:pt-8 sm:pb-6 md:pt-12 md:pb-8`}
         `}
       >
         <Link
           to={node.fields.slug}
           css={css`
-            ${tw`no-underline outline-none hover:bg-gray-100 focus:shadow-outline`}
+            ${tw`no-underline outline-none focus:shadow-outline`}
           `}
         >
           <h3
             css={css`
-              ${tw`mb-1 text-gray-900 font-serif text-lg leading-relaxed lg:text-xl`}
+              ${tw`mb-2 text-gray-900 font-sans text-xl font-medium tracking-tight leading-tight sm:mb-0 sm:leading-relaxed md:text-2xl`}
             `}
           >
             <span
               css={css`
-                ${tw`block mb-1 text-gray-500 font-sans text-xs font-semibold uppercase leading-none`}
+                ${tw`block mb-2 text-gray-600 font-serif text-sm uppercase tracking-tight leading-none sm:text-base sm:mb-1`}
               `}
             >
               {node.frontmatter.date}
@@ -34,7 +34,7 @@ export default props => (
           </h3>
           <p
             css={css`
-              ${tw`text-base text-gray-600 leading-snug md:leading-relaxed`}
+              ${tw`text-base text-gray-700 leading-snug sm:text-lg md:leading-relaxed md:text-xl`}
             `}
           >
             {node.frontmatter.description}

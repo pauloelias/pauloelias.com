@@ -7,7 +7,7 @@ import Listing from "../components/listing"
 import Pagination from "../components/pagination"
 import { Heading, Text } from "../components/ui/text"
 
-export default function SpeakingListing({ data, pageContext }) {
+export default ({ data, pageContext }) => {
   const entries = data.allMdx.edges
   const { pageHeading, pageDescription } = pageContext
 
@@ -27,8 +27,9 @@ export default function SpeakingListing({ data, pageContext }) {
       <Pagination
         context={pageContext}
         css={css`
-          ${tw`flex items-center justify-center mt-6 text-gray-600 font-bold tracking-tight outline-none focus:shadow-outline lg:mt-8 lg:mt-10 hover:underline`}
+          ${tw`flex items-center justify-between mt-6 text-gray-500 font-semibold tracking-tight uppercase outline-none focus:shadow-outline lg:mt-8 lg:mt-10 hover:text-blue-600 hover:underline`}
         `}
+        showPageNumbers={false}
       />
     </>
   )
