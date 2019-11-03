@@ -26,7 +26,7 @@ export default props => {
           `}
           {...props}
         >
-          {props.children}
+          {children}
         </p>
       )
   }

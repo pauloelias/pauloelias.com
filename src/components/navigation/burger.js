@@ -2,14 +2,14 @@ import tw from "tailwind.macro"
 import { css } from "@emotion/core"
 import React from "react"
 
-export default props => (
+export default ({ buttonCSS, handleClick, open }) => (
   <button
     type="button"
     css={css`
-      ${tw`block hover:text-gray-400 focus:text-gray-400 focus:outline-none`}
-      ${props.open ? tw`text-blue-100` : tw`text-gray-600`}
+      ${tw`relative z-10 block hover:text-gray-400 focus:text-gray-400 focus:outline-none md:hidden`}
+      ${open ? tw`text-blue-100` : tw`text-gray-600`}
     `}
-    onClick={props.handleClick}
+    onClick={handleClick}
   >
     <svg
       css={css`
@@ -17,7 +17,7 @@ export default props => (
       `}
       viewBox="0 0 24 24"
     >
-      {!props.open ? (
+      {!open ? (
         <path
           fillRule="evenodd"
           d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"

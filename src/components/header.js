@@ -4,8 +4,7 @@ import React, { useState } from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import Burger from "./burger"
-import BurgerMenu from "./burger-menu"
+import { Burger, BurgerMenu, NavItems } from "./navigation"
 
 const navItems = [
   { name: `Home`, link: `/` },
@@ -59,49 +58,39 @@ export default () => {
               objectPosition="50% 50%"
               alt="Paulo Elias Headshot"
               css={css`
-                ${tw`w-16 md:w-20`}
+                ${tw`w-20 lg:w-24`}
               `}
             />
           </Link>
           <h1
             css={css`
-              ${tw`ml-2 font-sans text-xl antialiased font-normal tracking-tight sm:ml-3`}
+              ${tw`ml-4 font-sans text-2xl antialiased font-semibold tracking-wider md:text-xl md:tracking-wide lg:ml-6 lg:text-2xl`}
             `}
           >
             <Link to="/">Paulo Elias</Link>
           </h1>
         </div>
-        <div
-          css={css`
-            ${tw`relative z-10 md:hidden`}
-          `}
-        >
-          <Burger open={open} handleClick={() => setOpen(!open)} />
-        </div>
-        <div
-          css={css`
+        <Burger open={open} handleClick={() => setOpen(!open)} />
+        <NavItems
+          navItems={navItems.slice(1)}
+          wrapperStyles={css`
             ${tw`hidden md:block`}
           `}
-        >
-          <nav>
-            {navItems.slice(1).map((item, i) => (
-              <Link
-                to={item.link}
-                key={i}
-                css={css`
-                  ${tw`ml-6 font-sans text-2xl font-normal tracking-wide capitalize hover:text-blue-600 hover:underline md:ml-10`}
-                `}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </nav>
-        </div>
+          linkStyles={css`
+            ${tw`ml-6 font-sans text-2xl tracking-wide capitalize font-semibold hover:text-blue-600 hover:underline md:ml-8 md:text-xl lg:ml-10 md:text-2xl`}
+          `}
+        />
       </div>
       <BurgerMenu
         open={open}
         navItems={navItems}
         handleClick={() => setOpen(!open)}
+        wrapperStyles={css`
+          ${tw`flex flex-col items-center h-screen absolute inset-0 px-2 py-20 bg-blue-900 md:hidden`}
+        `}
+        linkStyles={css`
+          ${tw`mt-6 block font-serif font-hairline text-5xl text-blue-100 hover:text-blue-500 hover:underline`}
+        `}
       />
     </header>
   )
