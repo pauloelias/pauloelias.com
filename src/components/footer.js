@@ -39,12 +39,12 @@ export default () => (
   >
     <div
       css={css`
-        ${tw`flex items-center justify-between md:justify-start`}
+        ${tw`flex items-center justify-between`}
       `}
     >
       <div
         css={css`
-          ${tw`flex items-center md:mr-4`}
+          ${tw`flex items-center sm:text-lg md:text-xl`}
         `}
       >
         &copy; {new Date().getFullYear()} Paulo Elias.
@@ -62,7 +62,7 @@ export default () => (
             rel="noopener noreferrer"
             aria-label={`${item.name} Icon`}
             css={css`
-              ${tw`mr-2 text-xl text-gray-600 hover:text-blue-900`}
+              ${tw`ml-2 text-lg text-gray-600 hover:text-blue-900 sm:text-xl md:text-2xl`}
             `}
           >
             {item.icon}
