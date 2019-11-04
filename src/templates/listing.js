@@ -10,6 +10,7 @@ import { Heading, Text } from "../components/ui/text"
 export default ({ data, pageContext }) => {
   const entries = data.allMdx.edges
   const { pageHeading, pageDescription, filter } = pageContext
+  const cleanFilter = filter.replace(/\//g, "")
 
   return (
     <>
@@ -23,11 +24,7 @@ export default ({ data, pageContext }) => {
         `}
       >
         {entries.map(({ node }) => (
-          <ListItem
-            key={node.id}
-            entry={node}
-            filter={filter.replace(/\//g, "")}
-          />
+          <ListItem key={node.id} entry={node} filter={cleanFilter} />
         ))}
       </div>
       <Pagination

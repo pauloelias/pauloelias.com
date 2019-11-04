@@ -49,7 +49,7 @@ export default ({ slides, media, filter, listing }) => {
               ${icon}
             `}
           />{" "}
-          <span>{filter === "/speaking/" ? `Watch Video` : `Listen`}</span>
+          <span>{filter === "speaking" ? `Watch Video` : `Listen`}</span>
         </ResourceLink>
       )}
     </div>
