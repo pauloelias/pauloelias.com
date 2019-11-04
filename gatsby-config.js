@@ -2,8 +2,8 @@ const config = require("./config/site")
 
 module.exports = {
   siteMetadata: {
-    title: config.title,
-    description: config.description,
+    title: config.siteTitle,
+    description: config.siteDescription,
     keywords: ["Product Engineer", "React", "JAMstack", "GraphQL", "CraftCMS"],
     author: {
       name: config.author,
