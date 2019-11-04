@@ -3,6 +3,10 @@
   "description": "Source for pauloelias.com, my personal site.",
   "version": "1.0.0",
   "license": "MIT",
+  "engines": {
+    "node": "12.13.0",
+    "yarn": "1.19.1"
+  },
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
