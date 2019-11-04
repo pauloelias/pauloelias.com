@@ -6,8 +6,9 @@ import { Link } from "gatsby"
 export default props => {
   const {
     context: { currentPage, numPages, pathPrefix },
-    showPageNumbers,
   } = props
+
+  const showPageNumbers = false
 
   const isFirst = currentPage === 1
   const isLast = currentPage === numPages
