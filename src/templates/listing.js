@@ -3,7 +3,7 @@ import { css } from "@emotion/core"
 import React from "react"
 import { graphql } from "gatsby"
 
-import Listing from "../components/listing"
+import ListItem from "../components/list-item"
 import Pagination from "../components/pagination"
 import { Heading, Text } from "../components/ui/text"
 
@@ -22,7 +22,13 @@ export default ({ data, pageContext }) => {
           ${tw`my-6 border-b border-gray-300 sm:my-8 lg:my-10 lg:mx-auto lg:w-2/3`}
         `}
       >
-        <Listing entries={entries} filter={filter} />
+        {entries.map(({ node }) => (
+          <ListItem
+            key={node.id}
+            entry={node}
+            filter={filter.replace(/\//g, "")}
+          />
+        ))}
       </div>
       <Pagination
         context={pageContext}
