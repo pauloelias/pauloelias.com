@@ -57,6 +57,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         id
         fields {
           slug
+          filter
         }
         frontmatter {
           title
@@ -162,23 +163,32 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     if (node.fileAbsolutePath.includes("content/journal/")) {
       slug =
         generateSlug("journal", node.frontmatter.title) || slugify(parent.name)
+      filter = `/journal/`
     }
 
     if (node.fileAbsolutePath.includes("content/speaking/")) {
       slug =
         generateSlug("speaking", node.frontmatter.title) || slugify(parent.name)
+      filter = `/speaking/`
     }
 
     if (node.fileAbsolutePath.includes("content/interviews/")) {
       slug =
         generateSlug("interviews", node.frontmatter.title) ||
         slugify(parent.name)
+      filter = `/interviews/`
     }
 
     createNodeField({
       name: `slug`,
       node,
       value: slug,
+    })
+
+    createNodeField({
+      name: `filter`,
+      node,
+      value: filter,
     })
   }
 }
