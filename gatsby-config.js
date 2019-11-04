@@ -1,23 +1,26 @@
+const config = require("./config/site")
+
 module.exports = {
   siteMetadata: {
-    title: `Technical leadership, product ownership, and product engineering.`,
-    description: `Paulo Elias is a technical lead, senior engineer, and a very subpar designer. He loves to talk shop about modern web + mobile devcelopment, teaching folks new tools and techniques, and enjoys public speaking.`,
+    title: config.title,
+    description: config.description,
+    keywords: ["Product Engineer", "React", "JAMstack", "GraphQL", "CraftCMS"],
     author: {
-      name: `Paulo Elias`,
-      byLine: `Per libero elit sollicitudin taciti faucibus metus natoque sapien viverra et, lorem est phasellus nam nisl litora erat interdum auctor, aptent ultricies pulvinar mi dis varius nascetur dictum fusce.`,
+      name: config.author,
+      byLine: config.minibio,
     },
     organization: {
-      name: "Paulo Elias",
-      url: "https://lengstorf.com",
-      logo: "https://lengstorf.com/android-chrome-512x512.png",
+      name: config.organization,
+      url: config.siteUrl,
+      logo: config.logo,
     },
-    siteUrl: "https://www.pauloelias.com",
-    image: "",
+    siteUrl: config.siteUrl,
+    image: config.logo,
     social: {
-      twitter: "@pauloelias",
-      instagram: "@pauloelias",
-      github: "@pauloelias",
-      fbAppID: "",
+      twitter: config.twitterHandle,
+      instagram: config.instagramHandle,
+      github: config.github,
+      fbAppID: config.fbAppID,
     },
   },
   pathPrefix: "/",
