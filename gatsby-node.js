@@ -121,7 +121,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `journal`,
     `/journal/`,
     `Journal`,
-    `Ut ipsum euismod ridiculus varius aliquam lorem, neque scelerisque mattis vulputate pulvinar dapibus, litora fringilla justo lectus interdum.`
+    `The Journal is a collection of articles, blog posts, as well as "Work Journal" entries I use to track my goals and progress on various side projects of mine.`
   )
 
   // Create Speaking Entries
@@ -134,11 +134,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `speaking`,
     `/speaking/`,
     `Public Speaking`,
-    `Ut ipsum euismod ridiculus varius aliquam lorem, neque scelerisque mattis vulputate pulvinar dapibus, litora fringilla justo lectus interdum.`
+    `I've had the pleasure to speak at various conferneces and workshops over the years. This is a list of publicly available recordings and resources of my talks.`
   )
 
-  // Create Interview Entries
-  createEntryPages(createPage, interviewEntries)
   // Create Interviews Entries List
   createPaginatedPages(
     createPage,
@@ -147,7 +145,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `interviews`,
     `/interviews/`,
     `Interviews`,
-    `Ut ipsum euismod ridiculus varius aliquam lorem, neque scelerisque mattis vulputate pulvinar dapibus, litora fringilla justo lectus interdum.`
+    `I have been fortunate to be a guest on various podcasts to talk about modern web + mobile development, the "JAMstack", and industry trends. Below is a selection of podcasts that are online and available to to listen to.`
   )
 }
 
