@@ -30,7 +30,7 @@ export default () => (
         >
           contact me
         </Obfuscate>{" "}
-        to jam together.
+        so we can jam together.
       </Text>
     </div>
   </>
