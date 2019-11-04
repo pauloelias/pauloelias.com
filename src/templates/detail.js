@@ -14,6 +14,9 @@ export default ({ data: { mdx } }) => {
   return (
     <section>
       <Heading level="h2">{title}</Heading>
+      {hasResources && (
+        <ResourcesListing media={url || null} slides={resourcesUrl || null} />
+      )}
       <article
         css={css`
           ${tw`mt-4 lg:mt-10`}

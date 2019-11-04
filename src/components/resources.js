@@ -2,12 +2,12 @@ import tw from "tailwind.macro"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import React from "react"
-import { IoIosAlbums, IoMdPlay } from "react-icons/io"
+import { MdPlayCircleOutline, MdFilterNone } from "react-icons/md"
 
 const ResourceLink = styled.a`
-  ${tw`flex items-center text-xl text-blue-700 hover:text-gray-700 lg:text-2xl`}
+  ${tw`flex items-center text-blue-700 hover:text-gray-700`}
   span {
-    ${tw`block ml-1 text-xl uppercase font-semibold md:ml-2 md:text-lg`}
+    ${tw`block ml-2 text-base uppercase font-semibold md:ml-3`}
   }
 `
 
@@ -25,7 +25,12 @@ export default ({ slides, media }) => (
         aria-label={`Resources Icon`}
         title="View Slides"
       >
-        <IoIosAlbums /> <span>Slides</span>
+        <MdFilterNone
+          css={css`
+            ${tw`w-8 h-8`}
+          `}
+        />{" "}
+        <span>Slides</span>
       </ResourceLink>
     )}
     {media && (
@@ -36,7 +41,12 @@ export default ({ slides, media }) => (
         aria-label={`Play Media Icon`}
         title="View Media"
       >
-        <IoMdPlay /> <span>Media</span>
+        <MdPlayCircleOutline
+          css={css`
+            ${tw`w-8 h-8`}
+          `}
+        />{" "}
+        <span>Media</span>
       </ResourceLink>
     )}
   </div>
