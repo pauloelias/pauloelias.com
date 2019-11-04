@@ -30,12 +30,12 @@ export default props => {
             >
               <h3
                 css={css`
-                  ${tw`mb-2 text-gray-900 font-sans text-xl font-medium tracking-tight leading-tight sm:mb-0 sm:leading-relaxed md:text-2xl`}
+                  ${tw`text-gray-900 font-sans text-xl font-medium tracking-tight leading-snug sm:leading-snug sm:tracking-tight sm:text-2xl`}
                 `}
               >
                 <span
                   css={css`
-                    ${tw`block mb-2 text-gray-600 font-serif text-sm uppercase tracking-tight leading-none sm:text-base sm:mb-1`}
+                    ${tw`block mb-1 text-gray-600 font-serif text-sm uppercase tracking-tight leading-none sm:text-base`}
                   `}
                 >
                   {node.frontmatter.date}
@@ -44,7 +44,7 @@ export default props => {
               </h3>
               <p
                 css={css`
-                  ${tw`text-base text-gray-700 leading-snug sm:text-lg md:leading-relaxed md:text-xl`}
+                  ${tw`mt-1 text-base text-gray-700 leading-snug sm:text-lg md:leading-relaxed md:text-xl`}
                 `}
               >
                 {node.frontmatter.description}

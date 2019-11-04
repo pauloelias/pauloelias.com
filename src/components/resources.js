@@ -12,7 +12,7 @@ const ResourceLink = styled.a`
 `
 
 export default ({ slides, media, filter, listing }) => {
-  const icon = tw`w-6 h-6 lg:w-10 lg:h-10`
+  const icon = tw`w-6 h-6 lg:w-8 lg:h-8`
   return (
     <div
       css={css`
