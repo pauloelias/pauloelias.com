@@ -10,12 +10,13 @@ const linkStyles = css`
   ${tw`no-underline outline-none focus:shadow-outline`}
 `
 
-export const ExtLink = ({ link, children }) => (
+const ExtLink = ({ link, children }) => (
   <a href={link} css={linkStyles}>
     {children}
   </a>
 )
-export const IntLink = ({ link, children }) => (
+
+const IntLink = ({ link, children }) => (
   <Link to={link} css={linkStyles}>
     {children}
   </Link>
