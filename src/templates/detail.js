@@ -9,13 +9,18 @@ import { Heading } from "../components/ui/text"
 import ResourcesListing from "../components/resources"
 
 export default ({ data: { mdx } }) => {
+  const { filter } = mdx.fields
   const { title, resourcesUrl, url } = mdx.frontmatter
   const hasResources = !isEmpty(url) || !isEmpty(resourcesUrl)
   return (
     <section>
       <Heading level="h2">{title}</Heading>
       {hasResources && (
-        <ResourcesListing media={url || null} slides={resourcesUrl || null} />
+        <ResourcesListing
+          media={url || null}
+          slides={resourcesUrl || null}
+          filter={filter}
+        />
       )}
       <article
         css={css`
@@ -24,7 +29,11 @@ export default ({ data: { mdx } }) => {
       >
         <MDXRenderer>{mdx.body}</MDXRenderer>
         {hasResources && (
-          <ResourcesListing media={url || null} slides={resourcesUrl || null} />
+          <ResourcesListing
+            media={url || null}
+            slides={resourcesUrl || null}
+            filter={filter}
+          />
         )}
       </article>
     </section>
@@ -37,6 +46,7 @@ export const pageQuery = graphql`
       body
       fields {
         slug
+        filter
       }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")

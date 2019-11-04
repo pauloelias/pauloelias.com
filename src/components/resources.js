@@ -5,49 +5,53 @@ import React from "react"
 import { MdPlayCircleOutline, MdFilterNone } from "react-icons/md"
 
 const ResourceLink = styled.a`
-  ${tw`flex items-center text-blue-700 hover:text-gray-700`}
+  ${tw`flex items-center mr-4 text-blue-700 hover:text-gray-700 md:mr-6 lg:justify-center lg:mr-8`}
   span {
-    ${tw`block ml-2 text-base uppercase font-semibold md:ml-3`}
+    ${tw`block ml-2 text-base md:ml-3 lg:text-lg`}
   }
 `
 
-export default ({ slides, media }) => (
-  <div
-    css={css`
-      ${tw`flex items-center justify-between mt-4 lg:mx-auto lg:mt-8 lg:w-2/3`}
-    `}
-  >
-    {slides && (
-      <ResourceLink
-        href={slides}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Resources Icon`}
-        title="View Slides"
-      >
-        <MdFilterNone
-          css={css`
-            ${tw`w-8 h-8`}
-          `}
-        />{" "}
-        <span>Slides</span>
-      </ResourceLink>
-    )}
-    {media && (
-      <ResourceLink
-        href={media}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label={`Play Media Icon`}
-        title="View Media"
-      >
-        <MdPlayCircleOutline
-          css={css`
-            ${tw`w-8 h-8`}
-          `}
-        />{" "}
-        <span>Media</span>
-      </ResourceLink>
-    )}
-  </div>
-)
+export default ({ slides, media, filter, listing }) => {
+  const icon = tw`w-6 h-6 lg:w-10 lg:h-10`
+  return (
+    <div
+      css={css`
+        ${tw`flex items-center mt-4`}
+        ${!listing && tw`lg:mx-auto lg:mt-8 lg:w-2/3`}
+      `}
+    >
+      {slides && (
+        <ResourceLink
+          href={slides}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Slides Icon`}
+          title="View Slides"
+        >
+          <MdFilterNone
+            css={css`
+              ${icon}
+            `}
+          />{" "}
+          <span>View Slides</span>
+        </ResourceLink>
+      )}
+      {media && (
+        <ResourceLink
+          href={media}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Play Media Icon`}
+          title="Watch Video"
+        >
+          <MdPlayCircleOutline
+            css={css`
+              ${icon}
+            `}
+          />{" "}
+          <span>{filter === "/speaking/" ? `Watch Video` : `Listen`}</span>
+        </ResourceLink>
+      )}
+    </div>
+  )
+}
