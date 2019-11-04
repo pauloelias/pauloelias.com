@@ -86,7 +86,7 @@ export default () => {
         navItems={navItems}
         handleClick={() => setOpen(!open)}
         wrapperStyles={css`
-          ${tw`flex flex-col items-center h-screen absolute inset-0 px-2 py-20 bg-blue-900 md:hidden`}
+          ${tw`absolute z-10 flex flex-col items-center h-full inset-0 px-2 py-20 bg-blue-900 md:hidden`}
         `}
         linkStyles={css`
           ${tw`mt-6 block font-serif font-hairline text-5xl text-blue-100 hover:text-blue-500 hover:underline`}

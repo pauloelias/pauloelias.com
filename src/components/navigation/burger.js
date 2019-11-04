@@ -6,7 +6,7 @@ export default ({ buttonCSS, handleClick, open }) => (
   <button
     type="button"
     css={css`
-      ${tw`relative z-10 block hover:text-gray-400 focus:text-gray-400 focus:outline-none md:hidden`}
+      ${tw`relative z-20 block hover:text-gray-400 focus:text-gray-400 focus:outline-none md:hidden`}
       ${open ? tw`text-blue-100` : tw`text-gray-600`}
     `}
     onClick={handleClick}

@@ -15,7 +15,7 @@ export default ({ children }) => (
         styles={css`
           html,
           body {
-            ${tw`h-screen antialiased`}
+            ${tw`h-full antialiased`}
           }
         `}
       />

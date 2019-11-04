@@ -1,5 +1,5 @@
 import tw from "tailwind.macro"
-import { css } from "@emotion/core"
+import { Global, css } from "@emotion/core"
 import React from "react"
 
 import NavItems from "./nav-items"
@@ -7,9 +7,17 @@ import NavItems from "./nav-items"
 export default ({ handleClick, linkStyles, open, navItems, wrapperStyles }) => (
   <div
     css={css`
-      ${!open ? tw`hidden` : tw`block`}
+      ${open ? tw`block` : tw`hidden`}
     `}
   >
+    <Global
+      styles={css`
+        html,
+        body {
+          ${open ? tw`overflow-y-hidden` : tw`overflow-y-visible`}
+        }
+      `}
+    />
     <NavItems
       navItems={navItems}
       wrapperStyles={wrapperStyles}
