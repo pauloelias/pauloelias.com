@@ -9,7 +9,7 @@ import { Heading, Text } from "../components/ui/text"
 
 export default ({ data, pageContext }) => {
   const entries = data.allMdx.edges
-  const { pageHeading, pageDescription } = pageContext
+  const { pageHeading, pageDescription, filter } = pageContext
 
   return (
     <>
@@ -22,14 +22,13 @@ export default ({ data, pageContext }) => {
           ${tw`my-6 border-b border-gray-300 sm:my-8 lg:my-10 lg:mx-auto lg:w-2/3`}
         `}
       >
-        <Listing entries={entries} />
+        <Listing entries={entries} filter={filter} />
       </div>
       <Pagination
         context={pageContext}
         css={css`
           ${tw`flex items-center justify-between mt-6 text-gray-500 font-semibold tracking-tight uppercase outline-none focus:shadow-outline lg:mt-8 lg:mt-10 hover:text-blue-600 hover:underline`}
         `}
-        showPageNumbers={false}
       />
     </>
   )
