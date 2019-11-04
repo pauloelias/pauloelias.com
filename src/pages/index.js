@@ -1,4 +1,5 @@
 import React from "react"
+import Obfuscate from "react-obfuscate"
 
 import SEO from "../components/seo"
 import { Text } from "../components/ui/text"
@@ -8,19 +9,28 @@ export default () => (
     <SEO title="Hello, I'm Paulo Elias" />
     <div>
       <Text type="intro">
-        Natoque nisl odio mi tristique nulla quis vel varius commodo lacinia
-        cras, tellus fames iaculis mollis amet sapien metus vestibulum justo
-        class.
+        Hello! I'm Paulo Elias, a Tech Lead and Product Engineer from sunny
+        California. I love to build web + mobile products, I enjoy devops, and I
+        get really jazzed up thinking deeply about building amazing digital
+        products.
       </Text>
       <Text type="intro" padding>
-        Turpis pulvinar felis porttitor molestie magnis lacus vehicula ipsum mi,
-        elementum auctor aliquam lobortis urna duis nec pellentesque massa, at
-        blandit vivamus facilisi ante dictum ac sodales.
+        I've been fortunate enough to work on products that have been nominated
+        for Webby Awards, I have worked on products that have won Webby Awards,
+        and I have delivered features that have positively impacted business,
+        growth, and marketing metrics.
       </Text>
       <Text type="intro" padding>
-        Natoque nisl odio mi tristique nulla quis vel varius commodo lacinia
-        cras, tellus fames iaculis mollis amet sapien metus vestibulum justo
-        class.
+        I’m currently open to interesting opportunites and I love to talk shop.
+        Feel free to{" "}
+        <Obfuscate
+          email="paulo@pauloelias.com"
+          headers={{ subject: "Howdy!" }}
+          aria-label="Email Me"
+        >
+          contact me
+        </Obfuscate>{" "}
+        to jam together.
       </Text>
     </div>
   </>

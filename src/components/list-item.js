@@ -11,7 +11,7 @@ const linkStyles = css`
 `
 
 const ExtLink = ({ link, children }) => (
-  <a href={link} css={linkStyles}>
+  <a href={link} css={linkStyles} target="_blank" rel="noopener noreferrer">
     {children}
   </a>
 )
