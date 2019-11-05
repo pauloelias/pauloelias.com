@@ -6,7 +6,7 @@ import { Text } from "../components/ui/text"
 
 export default () => (
   <>
-    <SEO title="Hello, I'm Paulo Elias" />
+    <SEO title="Technical Lead and Product Engineer" />
     <div>
       <Text type="intro">
         Hello! I'm Paulo Elias, a Tech Lead and Product Engineer from sunny
@@ -15,13 +15,13 @@ export default () => (
         products.
       </Text>
       <Text type="intro" padding>
-        I've been fortunate enough to work on products that have been nominated
-        for Webby Awards, I have worked on products that have won Webby Awards,
-        and I have delivered features that have positively impacted business,
-        growth, and marketing metrics.
+        I've worked on products that have been nominated for Webby Awards
+        multiple times + won a Webby Award. While awards are "cool" I have
+        delivered features that have positively impacted business, growth, and
+        marketing metrics.
       </Text>
       <Text type="intro" padding>
-        I’m currently open to interesting opportunites and I love to talk shop.
+        I’m currently open to interesting opportunities and I love talking shop.
         Feel free to{" "}
         <Obfuscate
           email="paulo@pauloelias.com"

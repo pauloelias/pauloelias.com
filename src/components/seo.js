@@ -12,6 +12,7 @@ export default function SEO({ description, lang, meta, title }) {
         site {
           siteMetadata {
             title
+            titleAlt
             description
             author {
               name
@@ -30,7 +31,7 @@ export default function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      titleTemplate={`%s | ${site.siteMetadata.titleAlt}`}
       meta={[
         {
           name: `description`,
