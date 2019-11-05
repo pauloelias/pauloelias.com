@@ -51,7 +51,6 @@ export const pageQuery = graphql`
         node {
           id
           fields {
-            slug
             filter
           }
           frontmatter {

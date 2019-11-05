@@ -121,7 +121,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `journal`,
     `/journal/`,
     `Journal`,
-    `The Journal is a collection of articles, blog posts, as well as "Work Journal" entries I use to track my goals and progress on various side projects of mine.`
+    `The Journal is a collection of articles, blog posts, and "Work Journal" entries. I use the Work Journal to track goals and report progress on various projects of mine.`
   )
 
   // Create Speaking Entries
@@ -134,7 +134,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `speaking`,
     `/speaking/`,
     `Public Speaking`,
-    `I've had the pleasure to speak at various conferneces and workshops over the years. This is a list of publicly available recordings and resources of my talks.`
+    `I've had the pleasure to speak at various conferences and workshops over the years. This is a list of publicly available recordings and resources of my talks.`
   )
 
   // Create Interviews Entries List
@@ -145,7 +145,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `interviews`,
     `/interviews/`,
     `Interviews`,
-    `I have been fortunate to be a guest on various podcasts to talk about modern web + mobile development, the "JAMstack", and industry trends. Below is a selection of podcasts that are online and available to to listen to.`
+    `During my career I have been a guest on various podcasts. Subjects range from modern web and mobile development, the "JAMstack", and industry trends. Below is a selection of podcasts that are online and available for listening.`
   )
 }
 

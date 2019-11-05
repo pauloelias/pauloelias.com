@@ -48,7 +48,6 @@ export const pageQuery = graphql`
     mdx(id: { eq: $id }) {
       body
       fields {
-        slug
         filter
       }
       frontmatter {

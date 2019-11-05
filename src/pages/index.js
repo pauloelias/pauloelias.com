@@ -9,16 +9,23 @@ export default () => (
     <SEO title="Technical Lead and Product Engineer" />
     <div>
       <Text type="intro">
-        Hello! I'm Paulo Elias, a Tech Lead and Product Engineer from sunny
-        California. I love to build web + mobile products, I enjoy devops, and I
-        get really jazzed up thinking deeply about building amazing digital
-        products.
+        Hello! I'm Paulo Elias, a Tech Lead and Product Engineer at{" "}
+        <a
+          href="https://www.ideo.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          IDEO
+        </a>{" "}
+        where I provide technical leadership, technical product ownership, and
+        technical strategy to IDEO's Global Marketing Team. I also get to roll
+        my sleeves up and help build our global digital products.
       </Text>
       <Text type="intro" padding>
-        I've worked on products that have been nominated for Webby Awards
-        multiple times + won a Webby Award. While awards are "cool" I have
-        delivered features that have positively impacted business, growth, and
-        marketing metrics.
+        During my time at IDEO I've worked on Webby Award nominatated + Webby
+        Award winning projects. But, while awards are "cool", I have delivered
+        products and features that have positively impacted business, growth,
+        and marketing initiatives.
       </Text>
       <Text type="intro" padding>
         I’m currently open to interesting opportunities and I love talking shop.

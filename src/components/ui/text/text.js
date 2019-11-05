@@ -10,7 +10,7 @@ export default props => {
       return (
         <p
           css={css`
-            ${tw`font-sans text-xl sm:text-2xl md:text-3xl md:leading-snug md:font-light text-gray-700`}
+            ${tw`text-gray-700 font-sans text-xl font-medium leading-normal sm:text-2xl sm:font-normal md:font-light md:leading-snug`}
             ${padding && tw`mt-6 sm:mt-8 md:mt-10`}
             a {
               ${tw`outline-none text-blue-600 underline hover:no-underline focus:shadow-outline`}
