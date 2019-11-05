@@ -4,7 +4,7 @@ module.exports = {
   siteTitleShort: "pauloelias", // short_name for manifest
   siteUrl: process.env.ROOT_URL || "https://www.pauloelias.com", // Domain of your site. No trailing slash!
   siteLanguage: "en", // Language Tag on <html> element
-  siteLogo: "images/social-card.png", // Used for SEO and manifest, path to your image you placed in the 'static' folder
+  siteLogo: "images/head-shot.jpg", // Used for SEO and manifest, path to your image you placed in the 'static' folder
   siteDescription:
     "Paulo Elias is a Technical Lead, Senior Product Engineer, and tries super hard to be a real designer. He loves to talk shop about modern web development, teaching folks new tools and techniques, and tinkering with new web + mobile technologies.",
   minibio:
