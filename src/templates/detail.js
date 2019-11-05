@@ -5,15 +5,18 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
+import SEO from "../components/seo"
 import { Heading } from "../components/ui/text"
 import ResourcesListing from "../components/resources"
 
 export default ({ data: { mdx } }) => {
   const { filter } = mdx.fields
-  const { title, resourcesUrl, url } = mdx.frontmatter
+  const { title, description, resourcesUrl, url } = mdx.frontmatter
   const hasResources = !isEmpty(url) || !isEmpty(resourcesUrl)
+
   return (
     <section>
+      <SEO title={title} description={description} />
       <Heading level="h2">{title}</Heading>
       {hasResources && (
         <ResourcesListing
@@ -53,6 +56,7 @@ export const pageQuery = graphql`
         title
         url
         resourcesUrl
+        description
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 800) {

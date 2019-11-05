@@ -3,6 +3,7 @@ import { css } from "@emotion/core"
 import React from "react"
 import { graphql } from "gatsby"
 
+import SEO from "../components/seo"
 import ListItem from "../components/list-item"
 import Pagination from "../components/pagination"
 import { Heading, Text } from "../components/ui/text"
@@ -14,6 +15,7 @@ export default ({ data, pageContext }) => {
 
   return (
     <>
+      <SEO title={pageHeading} description={pageDescription} />
       {pageHeading && <Heading level="h2">{pageHeading}</Heading>}
 
       {pageDescription && <Text type="body">{pageDescription}</Text>}
