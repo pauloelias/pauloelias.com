@@ -33,7 +33,8 @@ export default function SEO({ description, lang, image, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
-  const ogImage = image || site.siteMetadata.image
+  const ogImage =
+    image || `${site.siteMetadata.siteUrl}/${site.siteMetadata.image}`
 
   return (
     <Helmet
