@@ -3,6 +3,7 @@ const config = require("./config/site")
 module.exports = {
   siteMetadata: {
     title: config.siteTitle,
+    titleAlt: config.siteTitleAlt,
     description: config.siteDescription,
     keywords: ["Product Engineer", "React", "JAMstack", "GraphQL", "CraftCMS"],
     author: {
@@ -76,6 +77,16 @@ module.exports = {
           },
         ],
         plugins: [`gatsby-remark-images`],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: config.siteTitle,
+        start_url: `/`,
+        display: `browser`,
+        icon: `src/images/social-card.png`, // This path is relative to the root of the site.
+        legacy: false,
       },
     },
     `gatsby-plugin-postcss`,
