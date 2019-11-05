@@ -18,8 +18,8 @@ export default () => (
           IDEO
         </a>{" "}
         where I provide technical leadership, technical product ownership, and
-        technical strategy to IDEO's Global Marketing Team. I also get to roll
-        my sleeves up and help build our global digital products.
+        strategy to IDEO's Global Brand Team. I also get to roll my sleeves up
+        and help build our global digital products.
       </Text>
       <Text type="intro" padding>
         During my time at IDEO I've worked on Webby Award nominatated + Webby
@@ -37,7 +37,7 @@ export default () => (
         >
           contact me
         </Obfuscate>{" "}
-        so we can jam together.
+        so we can chat!
       </Text>
     </div>
   </>
