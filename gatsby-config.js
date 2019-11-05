@@ -85,7 +85,7 @@ module.exports = {
         name: config.siteTitle,
         start_url: `/`,
         display: `browser`,
-        icon: `src/images/social-card.png`, // This path is relative to the root of the site.
+        icon: `src/images/social-card.png`,
         legacy: false,
       },
     },
@@ -93,5 +93,13 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: `UA-278404-2`,
+        head: false,
+        anonymize: true,
+      },
+    },
   ],
 }
