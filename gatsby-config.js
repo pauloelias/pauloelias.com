@@ -13,10 +13,10 @@ module.exports = {
     organization: {
       name: config.organization,
       url: config.siteUrl,
-      logo: config.logo,
+      logo: config.siteLogo,
     },
     siteUrl: config.siteUrl,
-    image: config.logo,
+    image: config.siteLogo,
     social: {
       twitter: config.twitterHandle,
       instagram: config.instagramHandle,
@@ -85,7 +85,7 @@ module.exports = {
         name: config.siteTitle,
         start_url: `/`,
         display: `browser`,
-        icon: `src/images/social-card.png`,
+        icon: `static/images/social-card.png`,
         legacy: false,
       },
     },
