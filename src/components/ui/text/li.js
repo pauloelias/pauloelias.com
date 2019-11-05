@@ -5,7 +5,7 @@ import React from "react"
 export default props => (
   <li
     css={css`
-      ${tw`font-serif font-normal text-lg leading-relaxed md:text-xl lg:text-lg`}
+      ${tw`font-serif font-normal text-lg leading-loose md:text-xl lg:text-lg`}
     `}
     {...props}
   >
