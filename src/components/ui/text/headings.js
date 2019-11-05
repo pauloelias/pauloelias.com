@@ -22,7 +22,7 @@ export default props => {
       return (
         <h2
           css={css`
-            ${tw`text-gray-900 font-sans font-medium text-2xl leading-tight sm:font-normal sm:text-2xl md:text-3xl lg:mx-auto lg:w-2/3 lg:text-4xl`}
+            ${tw`mt-10 text-gray-900 font-sans font-medium text-2xl leading-tight sm:font-normal sm:text-2xl md:text-3xl lg:mt-12 lg:mx-auto lg:w-2/3 lg:text-4xl`}
           `}
           {...props}
         >
@@ -33,7 +33,7 @@ export default props => {
       return (
         <h3
           css={css`
-            ${tw`text-gray-900 font-sans font-semibold text-xl leading-tight uppercase sm:text-xl sm:font-normal md:text-2xl md:font-thin lg:mx-auto lg:w-2/3 lg:text-3xl`}
+            ${tw`mt-8 text-gray-900 font-sans font-semibold text-xl leading-tight uppercase sm:text-xl sm:font-normal md:text-2xl md:font-thin lg:mt-10 lg:mx-auto lg:w-2/3 lg:text-3xl`}
           `}
           {...props}
         >
@@ -46,7 +46,7 @@ export default props => {
       return (
         <h4
           css={css`
-            ${tw`text-gray-600 font-sans font-semibold text-lg leading-tight uppercase lg:mx-auto lg:w-2/3 lg:text-xl`}
+            ${tw`mt-6 text-gray-600 font-sans font-semibold text-lg leading-tight uppercase lg:mt-8 lg:mx-auto lg:w-2/3 lg:text-xl`}
           `}
           {...props}
         >
