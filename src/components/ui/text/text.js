@@ -26,6 +26,9 @@ export default props => {
         <p
           css={css`
             ${tw`mt-8 font-serif font-normal text-lg leading-loose md:text-xl lg:mx-auto lg:mt-10 lg:w-2/3 lg:text-lg`}
+            a {
+              ${tw`outline-none text-blue-600 underline hover:no-underline focus:shadow-outline`}
+            }
           `}
           {...props}
         >
