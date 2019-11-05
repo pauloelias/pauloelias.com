@@ -48,6 +48,48 @@ function createPaginatedPages(
   })
 }
 
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === `Mdx`) {
+    const parent = getNode(node.parent)
+    let slug =
+      slugify(node.frontmatter.title) ||
+      createFilePath({ node, getNode, basePath: `pages` })
+
+    if (node.fileAbsolutePath.includes("content/journal/")) {
+      slug =
+        generateSlug("journal", node.frontmatter.title) || slugify(parent.name)
+      filter = `/journal/`
+    }
+
+    if (node.fileAbsolutePath.includes("content/speaking/")) {
+      slug =
+        generateSlug("speaking", node.frontmatter.title) || slugify(parent.name)
+      filter = `/speaking/`
+    }
+
+    if (node.fileAbsolutePath.includes("content/interviews/")) {
+      slug =
+        generateSlug("interviews", node.frontmatter.title) ||
+        slugify(parent.name)
+      filter = `/interviews/`
+    }
+
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+
+    createNodeField({
+      node,
+      name: `filter`,
+      value: filter,
+    })
+  }
+}
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
@@ -147,48 +189,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `Interviews`,
     `During my career I have been a guest on various podcasts. Subjects range from modern web and mobile development, the "JAMstack", and industry trends. Below is a selection of podcasts that are online and available for listening.`
   )
-}
-
-exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `Mdx`) {
-    const parent = getNode(node.parent)
-    let slug =
-      slugify(node.frontmatter.title) ||
-      createFilePath({ node, getNode, basePath: `pages` })
-
-    if (node.fileAbsolutePath.includes("content/journal/")) {
-      slug =
-        generateSlug("journal", node.frontmatter.title) || slugify(parent.name)
-      filter = `/journal/`
-    }
-
-    if (node.fileAbsolutePath.includes("content/speaking/")) {
-      slug =
-        generateSlug("speaking", node.frontmatter.title) || slugify(parent.name)
-      filter = `/speaking/`
-    }
-
-    if (node.fileAbsolutePath.includes("content/interviews/")) {
-      slug =
-        generateSlug("interviews", node.frontmatter.title) ||
-        slugify(parent.name)
-      filter = `/interviews/`
-    }
-
-    createNodeField({
-      name: `slug`,
-      node,
-      value: slug,
-    })
-
-    createNodeField({
-      name: `filter`,
-      node,
-      value: filter,
-    })
-  }
 }
 
 exports.onCreateWebpackConfig = ({ actions, getConfig }) => {

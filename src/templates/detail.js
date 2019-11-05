@@ -49,6 +49,7 @@ export const pageQuery = graphql`
       body
       fields {
         filter
+        slug
       }
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
