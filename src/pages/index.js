@@ -23,7 +23,7 @@ export default () => (
       </Text>
       <Text type="intro" padding>
         During my time at IDEO I've worked on Webby Award nominatated + Webby
-        Award winning projects. But, while awards are "cool", I have delivered
+        Award winning projects. But, while awards are "cool," I have delivered
         products and features that have positively impacted business, growth,
         and marketing initiatives.
       </Text>
