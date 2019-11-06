@@ -64,7 +64,7 @@ export default () => {
           </Link>
           <h1
             css={css`
-              ${tw`ml-4 font-sans text-2xl antialiased font-semibold tracking-wider md:text-xl md:tracking-wide lg:ml-6 lg:text-2xl`}
+              ${tw`ml-4 font-sans text-2xl antialiased font-medium tracking-wider md:text-xl md:tracking-wide lg:ml-6 lg:text-2xl`}
             `}
           >
             <Link to="/">Paulo Elias</Link>
@@ -77,7 +77,7 @@ export default () => {
             ${tw`hidden md:block`}
           `}
           linkStyles={css`
-            ${tw`ml-6 font-sans text-2xl tracking-wide capitalize font-semibold hover:text-blue-600 hover:underline md:ml-8 md:text-xl lg:ml-10 md:text-2xl`}
+            ${tw`ml-6 font-sans text-2xl tracking-wide capitalize font-medium hover:text-blue-600 hover:underline md:ml-8 md:text-xl lg:ml-10 md:text-2xl`}
           `}
         />
       </div>
