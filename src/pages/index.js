@@ -1,3 +1,5 @@
+import tw from "tailwind.macro"
+import { css } from "@emotion/core"
 import React from "react"
 import Obfuscate from "react-obfuscate"
 
@@ -29,7 +31,12 @@ export default () => (
       </Text>
       <Text type="intro" padding>
         I’m currently open to interesting opportunities and I love talking shop.
-        Feel free to{" "}
+        Feel free to
+        <br
+          css={css`
+            ${tw`hidden lg:inline`}
+          `}
+        />{" "}
         <Obfuscate
           email="paulo@pauloelias.com"
           headers={{ subject: "Howdy!" }}
