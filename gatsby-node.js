@@ -187,7 +187,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `interviews`,
     `/interviews/`,
     `Interviews`,
-    `During my career I have been a guest on various podcasts. Subjects range from modern web and mobile development, the "JAMstack", and industry trends. Below is a selection of podcasts that are online and available for listening.`
+    `Over the years I have been a guest on various podcasts with subjects ranging from modern web and mobile development, the "JAMstack", and industry trends. Below is a selection of podcasts that are online and available for listening.`
   )
 }
 
