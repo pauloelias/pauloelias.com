@@ -12,6 +12,7 @@ export default function SEO({ description, lang, image, meta, title }) {
         site {
           siteMetadata {
             title
+            titleAlt
             description
             siteUrl
             image
