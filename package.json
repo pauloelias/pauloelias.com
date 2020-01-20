@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "engines": {
-    "node": "13",
-    "yarn": "1.21.1"
+    "node": "12.13.0",
+    "yarn": "1.19.1"
   },
   "scripts": {
     "build": "gatsby build",
